@@ -1,2 +1,2 @@
 # PortfolioWebsite
-A personal portfolio website showcasing my projects, skills, and experience in Computer Science.
+A personal website showcasing my projects, skills, and experience using React, Next.js, Tailwind CSS, and Framer Motion.
