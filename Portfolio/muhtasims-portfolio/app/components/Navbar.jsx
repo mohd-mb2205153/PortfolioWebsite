@@ -18,7 +18,7 @@ export default function Navbar() {
   function toggleNav() {
     setNav(!nav)
   }
-  
+
   function closeNav() {
     setNav(false)
   }
@@ -38,25 +38,25 @@ export default function Navbar() {
         ) )}
         </ul>
         </div>
-      {/* Mobile Navbar */}
+        {/* Mobile Navbar */}
 
         {/* Button */}
-      <div onClick={toggleNav} className='md:hidden absolute top-5 right-14 border rounded z-50 text-white/70 border-white/70 p-2'>
-        { nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
-      </div>
+        <div onClick={toggleNav} className='md:hidden absolute top-5 right-14 border rounded z-50 text-white/70 border-white/70 p-2'>
+          { nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
+        </div>
       
-      <div className={`md:hidden bg-black/90 fixed left-0 top-0 w-full h-full transform transition-transform duration-300 ${nav ? 'translate-x-0': '-translate-x-full'}`}>
-        <ul className='flex flex-col justify-center items-center space-y-8 h-full'>
-          {navLinks.map( (link, index) => (
-            <li key={index} className=''>
-              {/* Not using closeNav() */}
-              <Link href={link.path} onClick={toggleNav} className='text-4xl transform hover:text-white/50 transition-all duration-300 ease-in-out '> 
-                {link.title}
-              </Link>
-            </li>
-          ) )}
-        </ul>
-      </div>
+        <div className={`md:hidden bg-black/90 fixed left-0 top-0 w-full h-full transform transition-transform duration-300 ${nav ? 'translate-x-0': '-translate-x-full'}`}>
+          <ul className='flex flex-col justify-center items-center space-y-8 h-full'>
+            {navLinks.map( (link, index) => (
+              <li key={index} className=''>
+                {/* Not using closeNav() */}
+                <Link href={link.path} onClick={toggleNav} className='text-4xl transform hover:text-white/50 transition-all duration-300 ease-in-out '> 
+                  {link.title}
+                </Link>
+              </li>
+            ) )}
+          </ul>
+        </div>
 
       </div>
   )
