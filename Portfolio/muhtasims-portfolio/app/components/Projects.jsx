@@ -1,8 +1,9 @@
 'use client'
 import React from 'react'
 import { motion } from "framer-motion"
+import Image from "next/image";
 
-import campConnectImg from '../../assets/projects/campconnecty.png'
+import campConnectImg from '../../public/assets/projects/campconnecty.png'
 
 const projects = [
     {
@@ -32,27 +33,37 @@ const projects = [
 export default function Projects() {
   return (
     <div className='text-white bg-gradient-to-b from-black to-[#381A5F] py-18' id='portfolio'>
-        {/* <h1 className='text-4xl text-center'>
+        <h1 className='text-4xl text-center'>
             Selected Projects
         </h1>
 
-        <div className=' bg-amber-400 max-w-[1200px] mx-auto space-y-24 '>
+        <div className='max-w-[1200px] mx-auto space-y-24 '>
             {projects.map((project, index) => (
                 <motion.div
                     key={index}
+                    initial={{ opacity: 0, y: 75}}
+                    whileInView={{ opacity: 1, y: 0}}
+                    viewport={{ once: true }}
+                    transition={{ duration:0.5, delay:0.25 }}
                 >
+                    <div>
+                        <h2>{`0${index+1}`}</h2>
+                        <h2>{project.title}</h2>
+                        <p>{project.desc}</p>
+                        <p>{project.stack}</p>
+                        <div>
+                            
+                        </div>
+                    </div>
 
+                    
+
+                    <div className='flex justify-center items-center'>
+                        <Image src={project.src} alt={project.title} className="h-[400px] w-auto object-cover"/>
+                    </div>
                 </motion.div>
             ))}
-        </div> */}
-
-        <motion.div
-            initial={{ x:-100}}
-            animate={{x:0}}
-            transition={{type:'spring', stiffness:100}}
-        >
-            Hello
-        </motion.div>
+        </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import profilePic from '../../assets/pic-no-bg.png'
+import profilePic from '../../public/assets/pic-no-bg.png'
 import { motion } from 'framer-motion'
 // Need to change the fonts
 
@@ -16,17 +16,17 @@ export default function Hero() {
       <div className='relative'>
         <div className='text-8xl font-bold text-center'>
           <motion.div
-              initial={{ x:-500}}
-              animate={{x:0}}
-              transition={{type:'spring', stiffness:50}}
+              initial={{ x:-500 }}
+              animate={{ x:0 }}
+              transition={{type:'spring', stiffness:40,}}
           >
             <h1 className='text-[#98B4CE]'>Hi, I am</h1>
           </motion.div>
 
-                    <motion.div
-              initial={{ x:500}}
-              animate={{x:0}}
-              transition={{type:'spring', stiffness:100}}
+          <motion.div
+              initial={{ x:500 }}
+              animate={{ x:0 }}
+              transition={{type:'spring', stiffness:40}}
           >
             <h1 className='text-[#E48A57]'>Mohd Muhtasim Bashar</h1>
           </motion.div>
