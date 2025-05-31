@@ -34,9 +34,10 @@ const projects = [
 export default function Projects() {
   return (
     <div className='text-white bg-gradient-to-b from-black to-[#381A5F] py-18 mt-50' id='portfolio'>
-        <h1 className='text-6xl text-white text-center mx-w-[320px] mx-auto font-semibold my-12'>
+        
+        <h2 className='text-6xl text-white max-w-[320px] mx-auto font-semibold my-12'>
             Selected <span className='text-orange-400'> Projects </span>
-        </h1>
+        </h2>
 
         <div className='max-w-[1000px] mx-auto mt-40 space-y-24 '>
             {projects.map((project, index) => (

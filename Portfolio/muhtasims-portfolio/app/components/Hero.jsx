@@ -29,7 +29,7 @@ export default function Hero() {
               // whileHover={{ scale: 1.05}}
               transition={{type:'spring', stiffness:40}}
           >
-            <h1 className='text-[#E48A57]'>Mohd Muhtasim Bashar</h1>
+            <h1 className='text-[#E48A57]'>Muhtasim Bashar</h1>
           </motion.div>
 
         </div>
