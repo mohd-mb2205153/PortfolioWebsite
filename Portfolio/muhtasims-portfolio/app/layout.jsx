@@ -1,6 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/About";
+import Footer from "./components/Footer";
 
 // import { Space_Grotesk } from 'next/font/google';
 // const spaceGrotesk = Space_Grotesk({
