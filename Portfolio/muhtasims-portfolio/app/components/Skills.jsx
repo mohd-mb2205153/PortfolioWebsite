@@ -10,6 +10,7 @@ import { FaFlutter } from "react-icons/fa6";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiTensorflow } from "react-icons/si";
 import { SiSqlite } from "react-icons/si"; 
+import { SiGnubash } from "react-icons/si";
 
 const stackItems = [
   { id: 1, name: 'React', icon: <FaReact size={110} />, color: '#61DAF8' },
@@ -17,12 +18,13 @@ const stackItems = [
   { id: 3, name: 'JavaScript', icon: <DiJavascript size={110} />, color: '#F7DF1E' },
   { id: 4, name: 'Tailwind CSS', icon: <RiTailwindCssFill size={110} />, color: '#38BDF8' },
   { id: 5, name: 'Python', icon: <FaPython size={110} />, color: '#3776AB' },
-  { id: 6, name: 'Prisma', icon: <SiPrisma size={110} />, color: '#FAFA100' },
+  { id: 6, name: 'Prisma', icon: <SiPrisma size={110} />, color: '#abdbe3' },
   { id: 7, name: 'SQLite', icon: <SiSqlite size={120} />, color: '#003B57' },
   { id: 8, name: 'Java', icon: <FaJava size={110} />, color: '#5382A1' },
   { id: 9, name: 'Flutter', icon: <FaFlutter size={110} />, color: '#02569B' },
   { id: 10, name: 'Firebase', icon: <IoLogoFirebase size={110} />, color: '#FFCA28' },
   { id: 11, name: 'TensorFlow', icon: <SiTensorflow size={110} />, color: '#FF6F00' },
+  { id: 12, name: 'Bash', icon: <SiGnubash size={110} />, color: '#babbb7' },
 ];
 
 

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import campConnectImg from '../../public/assets/projects/campconnecty.png'
 import datascienceImg from '../../public/assets/projects/datascience.png'
+import unitrackImg from '../../public/assets/projects/unitrack.png'
 
 const projects = [
     {
@@ -26,7 +27,7 @@ const projects = [
         desc: "A full-stack web application designed to manage university academic operations. Built using modern technologies like React, Next.js, Prisma, and NextAuth, it provides a secure, role-based platform for students, instructors, and administrators. ",
         stack: "Next.js, React, SQLite, Prisma, OAuth",
         git: "https://github.com/mohd-mb2205153/camp-connect",
-        src: campConnectImg   // Project Image location
+        src: unitrackImg   // Project Image location
     },
 
 ]

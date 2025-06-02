@@ -7,7 +7,8 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <div className='pt-50 py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]'>
+    // Before pt-50
+    <div className='pt-40 py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]'>
       
       <div className='absolute rounded-[50%] w-[3000px]  h-[1300px] bg-black top-[650px] left-[50%] -translate-x-1/2
         bg-[radial-gradient(closest-side,#000_80%,#2B1942)]'>
