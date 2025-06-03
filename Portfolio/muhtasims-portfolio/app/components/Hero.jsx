@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     // Before pt was 50
-    <div className='pt-40 py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]'>
+    <div className='pt-50 py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]'>
       
       <div className='absolute rounded-[50%] w-[3000px]  h-[1300px] bg-black top-[650px] left-[50%] -translate-x-1/2
         bg-[radial-gradient(closest-side,#000_80%,#2B1942)]'>
@@ -27,7 +27,7 @@ export default function Hero() {
           <motion.div
               initial={{ x:500 }}
               animate={{ x:0 }}
-              // whileHover={{ scale: 1.05}}
+              whileHover={{ scale: 1.05}}
               transition={{type:'spring', stiffness:40}}
           >
             <h1 className='text-[#E48A57]'>Muhtasim Bashar</h1>
@@ -40,12 +40,17 @@ export default function Hero() {
         </p>
 
         {/* Profile picture not loading! */}
-
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ stiffness:40 }}
+      >
         <Image 
           src={profilePic}
           alt='profile picture'
           className='h-auto w-auto mx-auto'
         />
+      </motion.div>
+
       </div>
 
     </div>

@@ -10,7 +10,7 @@ export default function Home() {
       <Hero/>
       <Projects/>
       <Skills/>
-      <ContactMe/>
+      {/* <ContactMe/> */}
     </>
   );
 }
