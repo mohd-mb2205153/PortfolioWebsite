@@ -41,7 +41,7 @@ export default function Skills() {
                 hover:scale-125 transition-transform duration-300 bg-white/10
                 h-[160px] w-[160px] md:h-[220px] md:w-[220px] ' 
               >
-                <div style={{ color: skill.color}}>{skill.icon}</div>
+                <div style={{ color: skill.color }}>{skill.icon}</div>
                 <p className='mt-2'>{skill.name}</p>
             </div>
           ))}

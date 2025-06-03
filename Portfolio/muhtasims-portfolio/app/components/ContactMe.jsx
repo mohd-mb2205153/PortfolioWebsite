@@ -23,7 +23,7 @@ export default function ContactMe() {
               <textarea name="" id="" className='border border-gray-700 rounded-xl w-[700px]'></textarea>
             </div>
             
-            <button className='bg-orange-700 rounded-3xl text-white font-semibold w-[125px] h-[40px]'>Send</button>
+            <button className='bg-orange-700 rounded-3xl text-white font-semibold w-[125px] h-[40px] '>Send</button>
         </form>
       </div>
     </div>
