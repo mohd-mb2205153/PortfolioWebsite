@@ -8,8 +8,8 @@ const navLinks = [
   {title: "About", path: "#about"},
   {title: "Skills", path: "#skills"},
   {title: "Projects", path: "#projects"},
-  {title: "Experience", path: "#experience"},
-  {title: "Contacts", path: "#contatcs"},
+  // {title: "Experience", path: "#experience"},
+  // {title: "Contacts", path: "#contatcs"},
 ] 
 
 export default function Navbar() {

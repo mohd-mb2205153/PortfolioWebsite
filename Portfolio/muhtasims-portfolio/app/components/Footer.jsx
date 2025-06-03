@@ -17,7 +17,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <p className='text-center text-xl text-gray-300 text-[10px]'> Copyright &copy; 2024. All rights reserved. Made with ☕ and ❤️</p>
+        <p className='text-center text-xl text-gray-300 text-[10px] mb-4 '> Copyright &copy; 2024. All rights reserved. Made with ☕ and ❤️</p>
     </>
 
   )
