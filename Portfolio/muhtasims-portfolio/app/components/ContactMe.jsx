@@ -1,8 +1,52 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export default function ContactMe() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [showSuccess, setShowSuccess] = useState(false)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    try {
+      const response = await fetch('https://getform.io/f/bllqzdkb', {
+        method: 'POST',
+        body: new FormData(e.target)
+      })
+      
+      if (response.ok) {
+        // Clear form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        })
+        
+        // Show success popup
+        setShowSuccess(true)
+        setTimeout(() => setShowSuccess(false), 3000)
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+    }
+  }
   return (
     <div className='bg-black py-24 px-8'>
       <div className='max-w-7xl mx-auto'>
@@ -85,8 +129,7 @@ export default function ContactMe() {
             </div>
 
             <form 
-              action="https://getform.io/f/bllqzdkb" 
-              method="POST"
+              onSubmit={handleSubmit}
               className='space-y-6'
             >
               <div className='grid grid-cols-2 gap-4'>
@@ -94,6 +137,8 @@ export default function ContactMe() {
                   <input
                     type="text"
                     name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
                     placeholder="First Name"
                     required
                     className='w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#E48A57] transition-colors'
@@ -103,6 +148,8 @@ export default function ContactMe() {
                   <input
                     type="text"
                     name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
                     placeholder="Last Name"
                     required
                     className='w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#E48A57] transition-colors'
@@ -115,6 +162,8 @@ export default function ContactMe() {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Email"
                     required
                     className='w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#E48A57] transition-colors'
@@ -124,6 +173,8 @@ export default function ContactMe() {
                   <input
                     type="tel"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                     placeholder="Phone"
                     className='w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#E48A57] transition-colors'
                   />
@@ -133,6 +184,8 @@ export default function ContactMe() {
               <div>
                 <textarea
                   name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Your Message"
                   rows="4"
                   required
@@ -152,6 +205,21 @@ export default function ContactMe() {
           </motion.div>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showSuccess && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 50 }}
+          className='fixed top-8 right-8 bg-green-500 text-white px-6 py-4 rounded-xl shadow-lg z-50 flex items-center space-x-3'
+        >
+          <svg className='w-6 h-6' fill='currentColor' viewBox='0 0 24 24'>
+            <path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/>
+          </svg>
+          <span className='font-medium'>Message sent successfully!</span>
+        </motion.div>
+      )}
     </div>
   )
 }
