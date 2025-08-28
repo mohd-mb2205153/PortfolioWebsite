@@ -51,6 +51,25 @@ export default function Hero() {
         />
       </motion.div>
 
+      {/* Action buttons */}
+      <div className='mt-8 flex justify-center gap-4'>
+        <a
+          href='/assets/Muhtasim_CV.pdf'
+          download
+          className='rounded-full px-6 py-3 bg-[#E48A57] text-black font-medium shadow-sm hover:bg-[#E48A57]/90 transition-colors'
+        >
+          Download CV
+        </a>
+        <a
+          href='https://github.com/mohd-mb2205153'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='rounded-full px-6 py-3 border border-[#98B4CE] text-[#98B4CE] font-medium hover:bg-[#98B4CE]/10 transition-colors'
+        >
+          Visit GitHub
+        </a>
+      </div>
+
       </div>
 
     </div>
