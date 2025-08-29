@@ -1,15 +1,56 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import profilePic from '../../public/assets/pic-no-bg.png'
 import { motion } from 'framer-motion'
 // Need to change the fonts
 
 export default function Hero() {
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     // Before pt was 50
     <div className='pt-50 py-24 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)]'>
       
+      {/* Stars Background */}
+      <div className='absolute inset-0 overflow-hidden'>
+        {/* Static Stars */}
+        {[...Array(50)].map((_, i) => (
+          <motion.div
+            key={i}
+            className='absolute w-1 h-1 bg-white rounded-full'
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0.3, 1, 0.3],
+              scale: [0.8, 1.2, 0.8],
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+        
+
+      </div>
+
       <div className='absolute rounded-[50%] w-[3000px]  h-[1300px] bg-black top-[650px] left-[50%] -translate-x-1/2
         bg-[radial-gradient(closest-side,#000_80%,#2B1942)]'>
       </div>
@@ -92,9 +133,26 @@ export default function Hero() {
 
       </div>
 
+      {/* Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ 
+          opacity: showScrollTop ? 1 : 0,
+          scale: showScrollTop ? 1 : 0,
+        }}
+        whileHover={{ 
+          scale: 1.1,
+          backgroundColor: '#DBAF6E',
+          boxShadow: '0 10px 25px rgba(219, 175, 110, 0.4)'
+        }}
+        whileTap={{ scale: 0.9 }}
+        className='fixed bottom-8 right-8 w-12 h-12 bg-[#E48A57] text-white rounded-full shadow-lg z-50 flex items-center justify-center transition-all duration-300'
+      >
+        <svg className='w-6 h-6' fill='currentColor' viewBox='0 0 24 24'>
+          <path d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/>
+        </svg>
+      </motion.button>
     </div>
-
-
-    
   )
 }

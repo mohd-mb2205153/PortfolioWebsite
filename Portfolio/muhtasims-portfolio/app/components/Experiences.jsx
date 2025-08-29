@@ -94,25 +94,36 @@ function ExperienceCard({ experience }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileHover={{ 
+        scale: 1.02,
+        boxShadow: '0 20px 40px rgba(228, 138, 87, 0.15)',
+        borderColor: '#E48A57'
+      }}
       transition={{ duration: 0.6 }}
-      className="bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-8 backdrop-blur-sm"
+      className="bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:bg-gray-900/60 transition-all duration-75 group"
     >
-      <div className="flex items-start gap-4 md:gap-6">
-        <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0">
-          <Image src={experience.logo} alt={`${experience.org} logo`} fill sizes="64px" className="object-contain p-2" />
-        </div>
-        <div className="flex-1">
-          <h3 className="text-xl md:text-2xl font-bold text-white">
-            {experience.role}
-          </h3>
-          <p className="text-[#98B4CE] font-medium">{experience.org}</p>
-          <p className="text-white/70 text-sm">{experience.location} • {experience.dates}</p>
-        </div>
+              <div className="flex items-start gap-4 md:gap-6">
+          <motion.div 
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0 group-hover:border-[#E48A57] transition-colors duration-300"
+          >
+            <Image src={experience.logo} alt={`${experience.org} logo`} fill sizes="64px" className="object-contain p-2" />
+          </motion.div>
+                  <div className="flex-1">
+            <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#E48A57] transition-colors duration-300">
+              {experience.role}
+            </h3>
+            <p className="text-[#98B4CE] font-medium group-hover:text-[#DBAF6E] transition-colors duration-300">{experience.org}</p>
+            <p className="text-white/70 text-sm">{experience.location} • {experience.dates}</p>
+          </div>
       </div>
 
       <div className="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
         {/* Carousel */}
-        <div className="relative rounded-xl overflow-hidden border border-gray-800 bg-black/40">
+        <motion.div 
+          whileHover={{ scale: 1.02 }}
+          className="relative rounded-xl overflow-hidden border border-gray-800 bg-black/40 group-hover:border-[#E48A57] transition-colors duration-300"
+        >
           <div className="relative w-full aspect-video">
             <Image
               src={active.src}
@@ -142,7 +153,7 @@ function ExperienceCard({ experience }) {
           <div className="absolute top-3 right-3 text-xs text-white/80 bg-black/40 rounded-full px-2 py-0.5">
             {index + 1}/{total}
           </div>
-        </div>
+        </motion.div>
 
         {/* Description */}
         <div>
