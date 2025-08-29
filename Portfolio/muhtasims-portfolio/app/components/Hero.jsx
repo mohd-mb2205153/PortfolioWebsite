@@ -33,17 +33,17 @@ export default function Hero() {
             key={i}
             className='absolute w-1 h-1 bg-white rounded-full'
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${(i * 7.3) % 100}%`,
+              top: `${(i * 11.7) % 100}%`,
             }}
             animate={{
               opacity: [0.3, 1, 0.3],
               scale: [0.8, 1.2, 0.8],
             }}
             transition={{
-              duration: 2 + Math.random() * 3,
+              duration: 2 + (i % 3) + 0.5,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: (i % 4) * 0.5,
             }}
           />
         ))}
