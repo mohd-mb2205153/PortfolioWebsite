@@ -53,7 +53,7 @@ const experiencesData = [
       "Led manual screening with 8 researchers, aligning with FDA inclusion/exclusion.",
     ],
     gallery: [
-      { src: "/assets/experiences/qu-1.jpg", caption: "Automated text-mining pipeline for drug extraction" },
+      { src: "/assets/experiences/qu/Slide1.png", caption: "Poster of Our Study" },
       { src: "/assets/experiences/qu-2.jpg", caption: "Systematic review workflow and PRISMA steps" },
       { src: "/assets/experiences/qu-3.jpg", caption: "Team screening sessions validating AI outputs" },
     ],
@@ -160,7 +160,7 @@ function ExperienceCard({ experience }) {
 
 export default function Experiences() {
   return (
-    <section className="py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]">
+    <section className="py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]" id="experience">
       <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ export default function Experiences() {
           transition={{ duration: 0.6 }}
           className="text-5xl md:text-6xl font-bold text-center"
         >
-          Experience
+           My <span className='text-[#E48A57]'>Experience</span>
         </motion.h2>
 
         <div className="mt-14 space-y-10">

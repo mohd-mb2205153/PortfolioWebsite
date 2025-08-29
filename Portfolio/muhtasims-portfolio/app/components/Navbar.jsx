@@ -6,10 +6,10 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 const navLinks = [
   {title: "About", path: "#about"},
+  {title: "Experience", path: "#experience"},
   {title: "Skills", path: "#skills"},
   {title: "Projects", path: "#projects"},
-  // {title: "Experience", path: "#experience"},
-  // {title: "Contacts", path: "#contatcs"},
+  {title: "Contacts", path: "#contacts"},
 ] 
 
 export default function Navbar() {

@@ -34,7 +34,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className='text-white bg-gradient-to-b from-black to-[#381A5F] py-18 mt-50' id='projects'>
+    <div className='text-white bg-gradient-to-b from-black to-[#381A5F] py-18' id='projects'>
         
         <h2 className='text-6xl text-white max-w-[320px] mx-auto font-semibold my-12'>
             Selected <span className='text-orange-400'> Projects </span>

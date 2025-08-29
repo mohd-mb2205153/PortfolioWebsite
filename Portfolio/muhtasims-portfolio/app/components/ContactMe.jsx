@@ -48,7 +48,7 @@ export default function ContactMe() {
     }
   }
   return (
-    <div className='bg-black py-24 px-8'>
+    <div className='bg-black py-24 px-8' id="contacts">
       <div className='max-w-7xl mx-auto'>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
