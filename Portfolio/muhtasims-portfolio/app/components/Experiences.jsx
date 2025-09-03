@@ -54,7 +54,7 @@ const experiencesData = [
     ],
     gallery: [
       { src: "/assets/experiences/qu/Slide1.png", caption: "Poster of Our Study" },
-      { src: "/assets/experiences/qu-2.jpg", caption: "Systematic review workflow and PRISMA steps" },
+      { src: "/assets/experiences/qu/prisma.png", caption: "Systematic review workflow and PRISMA steps" },
       { src: "/assets/experiences/qu-3.jpg", caption: "Team screening sessions validating AI outputs" },
     ],
   },
