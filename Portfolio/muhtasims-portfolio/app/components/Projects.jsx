@@ -28,7 +28,7 @@ const projects = [
         title: "UniTrack",
         desc: "A full-stack web application designed to manage university academic operations. Built using modern technologies like React, Next.js, Prisma, and NextAuth, it provides a secure, role-based platform for students, instructors, and administrators.",
         stack: "Next.js, React, SQLite, Prisma, OAuth",
-        git: "https://github.com/mohd-mb2205153/camp-connect",
+        git: "https://github.com/marcus-mm2206892/unitrack",
         src: unitrackImg,
         category: "Web App"
     },
