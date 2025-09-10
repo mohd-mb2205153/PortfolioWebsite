@@ -14,7 +14,7 @@ const experiencesData = [
     description:
       "Worked on grid software and smart infrastructure initiatives focusing on forecasting, dashboards, and IoT integrations.",
     bullets: [
-      "Trained and deployed LSTM models on smart meter data for consumption forecasting.",
+      "Trained and deployed LSTM based AI models on smart meter data for consumption forecasting.",
       "Built Power BI dashboards with live MDMS data for Kahramaa LV visibility.",
       "Configured Modbus, BACnet, MQTT to stream MFM and solar metrics to IoT gateways.",
       "Supported technical sales docs for PSS SINCAL proposal for 2.8M QAR EWA bid.",

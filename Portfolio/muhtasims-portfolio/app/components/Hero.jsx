@@ -77,7 +77,7 @@ export default function Hero() {
         </div>
     
         <p className='text-xl text-center max-w-[500px] mx-auto mt-8 text-white/80'> 
-          I am a Senior CS Student at Qatar University, focusinng AI, Deep Learning, Data Science, Web Development & Mobile Application
+          I am a Senior CS Student at Qatar University, focusing on AI, Deep Learning, Data Science, Web Development & Mobile Application
         </p>
 
         {/* Profile picture not loading! */}
