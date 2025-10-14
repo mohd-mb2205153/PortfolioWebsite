@@ -32,32 +32,53 @@ const experiencesData = [
         src: "/assets/experiences/siemens/mobility-1.jpg",
         caption: "Siemens Mobility Tram Depot",
       },
-    //   {
-    //     src: "/assets/experiences/siemens/dashboard-1.mp4",
-    //     caption: "Advance Analytics Dashboard of Kahramaa LV Insight",
-    //   },
+      {
+        src: "/assets/experiences/siemens/dashboard1.mp4",
+        caption: "Advance Analytics Dashboard of Kahramaa LV Insight",
+      },
     ],
   },
+  ,
   {
-    id: "qu-research-2024",
+    id: "qu-research-2025",
     role: "Research Intern",
     org: "Qatar University",
     location: "Doha, Qatar",
-    dates: "May 2024 – Aug 2024",
+    dates: "May 2025 – June 2025",
     logo: "/assets/experiences/qu/qu-logo.png",
     description:
-      "AI-driven literature mining and evidence synthesis to study drugs that affect bleeding under the College of Dental Medicine.",
+      "Smart Warning System for Distracted Delivery Motorcyclists Using Machine Learning",
     bullets: [
-      "Built AI tool to extract drugs/effects from literature, improving productivity by 70%.",
-      "Performed systematic review on anti-platelet and anti-thrombotic medications.",
-      "Led manual screening with 8 researchers, aligning with FDA inclusion/exclusion.",
+      "Contributed to the Development of a CNN-based mobile application that can detect rider distraction even when motorcyclists are wearing helmets",
+      "Created a custom data set, comprised of 1,799 images (balanced: “Looking” vs. “Not Looking”), in different lighting conditions, helmets and backgrounds.",
+      "Built a Flutter-based mobile app that runs passively in the background and delivers over the screen alerts, which reduced distractions without sudden interruptions.",
     ],
     gallery: [
-      { src: "/assets/experiences/qu/Slide1.png", caption: "Poster of Our Study" },
-      { src: "/assets/experiences/qu/prisma.png", caption: "Systematic review workflow and PRISMA steps" },
-      { src: "/assets/experiences/qu-3.jpg", caption: "Team screening sessions validating AI outputs" },
+      { src: "/assets/experiences/qu/Group picture.png", caption: "Award Ceremony" },
+      { src: "/assets/experiences/qu/Slide2.png", caption: "Overview" },
+      { src: "/assets/experiences/qu/Slide5.png", caption: "Mobile App" }
     ],
-  },
+  }
+  // {
+  //   id: "qu-research-2024",
+  //   role: "Research Intern",
+  //   org: "Qatar University",
+  //   location: "Doha, Qatar",
+  //   dates: "May 2024 – Aug 2024",
+  //   logo: "/assets/experiences/qu/qu-logo.png",
+  //   description:
+  //     "AI-driven literature mining and evidence synthesis to study drugs that affect bleeding under the College of Dental Medicine.",
+  //   bullets: [
+  //     "Built AI tool to extract drugs/effects from literature, improving productivity by 70%.",
+  //     "Performed systematic review on anti-platelet and anti-thrombotic medications.",
+  //     "Led manual screening with 8 researchers, aligning with FDA inclusion/exclusion.",
+  //   ],
+  //   gallery: [
+  //     { src: "/assets/experiences/qu/Slide1.png", caption: "Poster of Our Study" },
+  //     { src: "/assets/experiences/qu/prisma.png", caption: "Systematic review workflow and PRISMA steps" },
+  //     { src: "/assets/experiences/qu-3.jpg", caption: "Team screening sessions validating AI outputs" },
+  //   ],
+  // },
 //   {
 //     id: "acm-tech-2025",
 //     role: "Tech Team Member",
@@ -125,13 +146,28 @@ function ExperienceCard({ experience }) {
           className="relative rounded-xl overflow-hidden border border-gray-800 bg-black/40 group-hover:border-[#E48A57] transition-colors duration-300"
         >
           <div className="relative w-full aspect-video">
-            <Image
-              src={active.src}
-              alt={active.caption}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-            />
+            {active.src.endsWith('.mp4') || active.src.endsWith('.webm') || active.src.endsWith('.mov') ? (
+              <video
+                src={active.src}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <Image
+                src={active.src}
+                alt={active.caption}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            )}
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm px-4 py-2">
             {active.caption}
