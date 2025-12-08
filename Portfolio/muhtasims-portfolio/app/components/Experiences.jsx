@@ -5,6 +5,31 @@ import { motion } from "framer-motion"
 
 const experiencesData = [
   {
+    id: "s3labs-2025",
+    role: "Frontend Developer Intern",
+    org: "S3 Lab",
+    location: "Doha, Qatar",
+    dates: "October 2025 - Present",
+    logo: "/assets/experiences/s3lab/s3Logo.png",
+    description:
+      "Building the frontend for CAID, an AI-powered carbon emissions dashboard, focusing on data visualization, usability, and seamless integration with AI services.",
+    bullets: [
+      "Developing the frontend for CAID, an AI-driven carbon emissions analytics dashboard, using TypeScript, React, and Next.js to help sustainability teams visualize and track their impact.",
+      "Integrating backend services and AI models with the frontend via REST APIs, enabling near real-time carbon insights and reducing manual data handling for users.",
+      "Collaborating with designers and ML engineers to ship responsive, accessible UI components, and containerizing the app with Docker and Kubernetes for scalable, reliable deployments."
+    ],
+    gallery: [
+      {
+        src: "/assets/experiences/s3lab/caid.png",
+        caption: "CAID carbon emissions analytics dashboard UI"
+      },
+      {
+        src: "/assets/experiences/s3lab/caid2.png",
+        caption: "Reusable frontend components built with React and TypeScript"
+      }
+    ],
+  },
+  {
     id: "siemens-2025",
     role: "Grid Software Intern - Smart Infrastructure",
     org: "Siemens WLL",
@@ -88,7 +113,7 @@ function ExperienceCard({ experience }) {
             whileHover={{ scale: 1.1, rotate: 5 }}
             className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0 group-hover:border-[#E48A57] transition-colors duration-300"
           >
-            <Image src={experience.logo} alt={`${experience.org} logo`} fill sizes="64px" className="object-contain p-2" />
+            <Image src={experience.logo} alt={`${experience.org} logo`} fill sizes="64px" className="object-contain p-2 rounded-xl" />
           </motion.div>
                   <div className="flex-1">
             <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#E48A57] transition-colors duration-300">
