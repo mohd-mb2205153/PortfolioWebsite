@@ -88,10 +88,12 @@ const experiencesData = [
 
 function ExperienceCard({ experience }) {
   const [index, setIndex] = useState(0)
+  const [showDescription, setShowDescription] = useState(false)
   const total = experience.gallery.length
 
   const next = () => setIndex((prev) => (prev + 1) % total)
   const prev = () => setIndex((prev) => (prev - 1 + total) % total)
+  const toggleDescription = () => setShowDescription(!showDescription)
 
   const active = experience.gallery[index]
 
@@ -179,11 +181,38 @@ function ExperienceCard({ experience }) {
         {/* Description */}
         <div>
           <p className="text-sm sm:text-base text-white/80 leading-relaxed">{experience.description}</p>
-          <ul className="list-disc list-inside mt-3 sm:mt-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base text-white/80">
+          
+          {/* Mobile-only toggle button */}
+          <motion.button
+            onClick={toggleDescription}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="md:hidden mt-3 sm:mt-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E48A57]/20 to-[#DBAF6E]/20 border border-[#E48A57]/30 rounded-lg text-[#E48A57] text-sm font-medium hover:bg-[#E48A57]/30 hover:border-[#E48A57]/50 transition-all duration-300"
+          >
+            <svg 
+              className={`w-4 h-4 transition-transform duration-300 ${showDescription ? 'rotate-180' : ''}`} 
+              fill="currentColor" 
+              viewBox="0 0 20 20"
+            >
+              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+            {showDescription ? 'Hide Details' : 'Show Details'}
+          </motion.button>
+
+          {/* Bullet points - hidden on mobile by default, always visible on desktop */}
+          <motion.ul 
+            initial={false}
+            animate={{ 
+              height: showDescription ? 'auto' : 0,
+              opacity: showDescription ? 1 : 0
+            }}
+            transition={{ duration: 0.3 }}
+            className="md:!h-auto md:!opacity-100 list-disc list-inside mt-3 sm:mt-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base text-white/80 overflow-hidden"
+          >
             {experience.bullets.map((b, i) => (
               <li key={i}>{b}</li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </motion.div>
@@ -192,7 +221,7 @@ function ExperienceCard({ experience }) {
 
 export default function Experiences() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]" id="experience">
+    <section className="pt-6 pb-12 sm:pt-10 sm:pb-16 md:py-20 lg:py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]" id="experience">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

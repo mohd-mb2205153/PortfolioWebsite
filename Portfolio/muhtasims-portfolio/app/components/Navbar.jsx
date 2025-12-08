@@ -47,15 +47,15 @@ export default function Navbar() {
       {/* Mobile Navbar Button */}
       <div 
         onClick={toggleNav} 
-        className='md:hidden absolute top-6 right-6 border border-white/30 rounded-xl z-50 text-white/80 hover:text-white hover:border-white/50 transition-all duration-300 p-3 bg-black/20 backdrop-blur-sm'
+        className='md:hidden absolute top-6 right-6 border border-white/30 rounded-xl z-[60] text-white/80 hover:text-white hover:border-white/50 transition-all duration-300 p-3 bg-black/20 backdrop-blur-sm'
       >
         {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
       </div>
     
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-black/95 backdrop-blur-xl fixed left-0 top-0 w-full h-full transform transition-all duration-500 ease-in-out ${nav ? 'translate-x-0 opacity-100': '-translate-x-full opacity-0'}`}>
+      <div className={`md:hidden bg-black/95 backdrop-blur-xl fixed left-0 top-0 w-full h-full z-[55] transform transition-all duration-500 ease-in-out ${nav ? 'translate-x-0 opacity-100': '-translate-x-full opacity-0'}`}>
         {/* Close button in mobile menu */}
-        <div className='absolute top-6 right-6'>
+        <div className='absolute top-6 right-6 z-10'>
           <button 
             onClick={toggleNav}
             className='border border-white/30 rounded-xl text-white/80 hover:text-white hover:border-white/50 transition-all duration-300 p-3 bg-black/20 backdrop-blur-sm'
@@ -64,7 +64,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <ul className='flex flex-col justify-center items-center space-y-10 h-full'>
+        <ul className='flex flex-col justify-center items-center space-y-10 h-full relative z-10'>
           {navLinks.map((link, index) => (
             <li key={index} className='relative group'>
               <Link 
