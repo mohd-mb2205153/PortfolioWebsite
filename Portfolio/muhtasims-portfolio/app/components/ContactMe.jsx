@@ -48,24 +48,24 @@ export default function ContactMe() {
     }
   }
   return (
-    <div className='bg-black py-24 px-8' id="contacts">
+    <div className='bg-black py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8' id="contacts">
       <div className='max-w-7xl mx-auto'>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className='text-6xl font-bold text-center mb-16'
+          className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 md:mb-12 lg:mb-16'
         >
           Contact <span className='text-[#E48A57]'>Me</span>
         </motion.h1>
 
-        <div className='grid lg:grid-cols-2 gap-12 items-start'>
+        <div className='grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start'>
           {/* Left Section - Contact Information */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 240 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className='space-y-8'
+            className='space-y-6 md:space-y-8'
           >
             {/* Phone */}
             <div className='flex items-center space-x-4'>
@@ -119,9 +119,9 @@ export default function ContactMe() {
           {/* Right Section - Contact Form */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className='bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800'
+            className='bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gray-800'
           >
             <div className='mb-8'>
               <h2 className='text-3xl font-bold text-[#E48A57] mb-2'>Let's connect</h2>
@@ -130,9 +130,9 @@ export default function ContactMe() {
 
             <form 
               onSubmit={handleSubmit}
-              className='space-y-6'
+              className='space-y-4 md:space-y-6'
             >
-              <div className='grid grid-cols-2 gap-4'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
                 <div>
                   <input
                     type="text"
@@ -157,7 +157,7 @@ export default function ContactMe() {
                 </div>
               </div>
 
-              <div className='grid grid-cols-2 gap-4'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4'>
                 <div>
                   <input
                     type="email"

@@ -41,8 +41,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={geist.className}>
-      <body>
+    <html lang="en" className={`${geist.className} overflow-x-hidden`}>
+      <body className="overflow-x-hidden">
         <Navbar></Navbar>
         {children}
         <Footer></Footer>

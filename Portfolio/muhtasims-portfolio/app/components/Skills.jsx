@@ -59,18 +59,18 @@ export default function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className='text-center mb-20'
+          className='text-center mb-12 md:mb-16 lg:mb-20'
         >
-          <h2 className='text-5xl md:text-6xl font-bold mb-6'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6'>
             My <span className='text-[#E48A57]'>Skills</span>
           </h2>
-          <p className='text-xl text-white/60 max-w-2xl mx-auto leading-relaxed'>
+          <p className='text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed px-4'>
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
 
         {/* Skills Grid */}
-        <div className='space-y-20'>
+        <div className='space-y-12 md:space-y-16 lg:space-y-20'>
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.name}
@@ -81,14 +81,14 @@ export default function Skills() {
             >
               {/* Category Header */}
               <div className='text-center'>
-                <h3 className='text-2xl md:text-3xl font-semibold text-white mb-3'>
+                <h3 className='text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 md:mb-3'>
                   {category.name}
                 </h3>
                 <div className='w-16 h-0.5 bg-gradient-to-r from-[#E48A57] to-[#98B4CE] mx-auto rounded-full opacity-60'></div>
               </div>
 
               {/* Skills Grid */}
-              <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
+              <div className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8'>
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.id}

@@ -27,8 +27,8 @@ export default function Navbar() {
     <div className='fixed flex justify-center z-50 w-full text-white font-bold'>
       {/* Desktop Navbar */}
       <div className='border border-white/20 mt-8 backdrop-blur-3xl rounded-3xl hidden md:flex items-center
-       content-center p-3 max-w-[600px] mx-auto bg-black/20 shadow-2xl shadow-black/20'>  
-        <ul className='flex flex-row p-2 space-x-8'>
+       content-center px-4 py-4 max-w-[600px] mx-auto bg-black/20 shadow-2xl shadow-black/20'>  
+        <ul className='flex flex-row space-x-8'>
           {navLinks.map((link, index) => (
             <li key={index} className='relative group'>
               <Link 

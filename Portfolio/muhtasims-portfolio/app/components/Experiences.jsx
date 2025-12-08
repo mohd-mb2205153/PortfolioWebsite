@@ -106,17 +106,17 @@ function ExperienceCard({ experience }) {
         borderColor: '#E48A57'
       }}
       transition={{ duration: 0.6 }}
-      className="bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:bg-gray-900/60 transition-all duration-75 group"
+      className="bg-gray-900/40 border border-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm hover:bg-gray-900/60 transition-all duration-75 group"
     >
-        <div className="flex items-start gap-4 md:gap-6">
+        <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
           <motion.div 
             whileHover={{ scale: 1.1, rotate: 5 }}
-            className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0 group-hover:border-[#E48A57] transition-colors duration-300"
+            className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0 group-hover:border-[#E48A57] transition-colors duration-300"
           >
             <Image src={experience.logo} alt={`${experience.org} logo`} fill sizes="64px" className="object-contain p-2 rounded-xl" />
           </motion.div>
                   <div className="flex-1">
-            <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#E48A57] transition-colors duration-300">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-[#E48A57] transition-colors duration-300">
               {experience.role}
             </h3>
             <p className="text-[#98B4CE] font-medium group-hover:text-[#DBAF6E] transition-colors duration-300">{experience.org}</p>
@@ -124,7 +124,7 @@ function ExperienceCard({ experience }) {
           </div>
       </div>
 
-      <div className="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
+      <div className="mt-4 sm:mt-6 grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 items-stretch">
         {/* Carousel */}
         <motion.div 
           whileHover={{ scale: 1.02 }}
@@ -160,14 +160,14 @@ function ExperienceCard({ experience }) {
           <button
             aria-label="Previous image"
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 backdrop-blur border border-white/20"
+            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-1.5 sm:p-2 backdrop-blur border border-white/20 text-lg sm:text-xl"
           >
             ‹
           </button>
           <button
             aria-label="Next image"
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 backdrop-blur border border-white/20"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-1.5 sm:p-2 backdrop-blur border border-white/20 text-lg sm:text-xl"
           >
             ›
           </button>
@@ -178,8 +178,8 @@ function ExperienceCard({ experience }) {
 
         {/* Description */}
         <div>
-          <p className="text-white/80 leading-relaxed">{experience.description}</p>
-          <ul className="list-disc list-inside mt-4 space-y-2 text-white/80">
+          <p className="text-sm sm:text-base text-white/80 leading-relaxed">{experience.description}</p>
+          <ul className="list-disc list-inside mt-3 sm:mt-4 space-y-1.5 sm:space-y-2 text-sm sm:text-base text-white/80">
             {experience.bullets.map((b, i) => (
               <li key={i}>{b}</li>
             ))}
@@ -192,18 +192,18 @@ function ExperienceCard({ experience }) {
 
 export default function Experiences() {
   return (
-    <section className="py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]" id="experience">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[linear-gradient(to_bottom,#000,#0b0813_30%,#1a122a_70%)]" id="experience">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl font-bold text-center"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center"
         >
            My <span className='text-[#E48A57]'>Experience</span>
         </motion.h2>
 
-        <div className="mt-14 space-y-10">
+        <div className="mt-8 md:mt-12 lg:mt-14 space-y-6 md:space-y-8 lg:space-y-10">
           {experiencesData.map((exp) => (
             <ExperienceCard key={exp.id} experience={exp} />
           ))}
