@@ -59,46 +59,6 @@ const experiencesData = [
       { src: "/assets/experiences/qu/Slide5.png", caption: "Mobile App" }
     ],
   }
-  // {
-  //   id: "qu-research-2024",
-  //   role: "Research Intern",
-  //   org: "Qatar University",
-  //   location: "Doha, Qatar",
-  //   dates: "May 2024 – Aug 2024",
-  //   logo: "/assets/experiences/qu/qu-logo.png",
-  //   description:
-  //     "AI-driven literature mining and evidence synthesis to study drugs that affect bleeding under the College of Dental Medicine.",
-  //   bullets: [
-  //     "Built AI tool to extract drugs/effects from literature, improving productivity by 70%.",
-  //     "Performed systematic review on anti-platelet and anti-thrombotic medications.",
-  //     "Led manual screening with 8 researchers, aligning with FDA inclusion/exclusion.",
-  //   ],
-  //   gallery: [
-  //     { src: "/assets/experiences/qu/Slide1.png", caption: "Poster of Our Study" },
-  //     { src: "/assets/experiences/qu/prisma.png", caption: "Systematic review workflow and PRISMA steps" },
-  //     { src: "/assets/experiences/qu-3.jpg", caption: "Team screening sessions validating AI outputs" },
-  //   ],
-  // },
-//   {
-//     id: "acm-tech-2025",
-//     role: "Tech Team Member",
-//     org: "ACM - QU Chapter",
-//     location: "Qatar University",
-//     dates: "May 2025 – Present",
-//     logo: "/assets/experiences/acm-logo.png",
-//     description:
-//       "Contributing to student-led tech initiatives, projects, and internship program enablement at ACM QU.",
-//     bullets: [
-//       "Selected to the core tech team to drive high-impact initiatives.",
-//       "Contributing to 3 projects improving learning and campus experience.",
-//       "Helping launch a Software Engineering Internship Program for 1st–3rd years.",
-//     ],
-//     gallery: [
-//       { src: "/assets/experiences/acm-1.jpg", caption: "Building student-led tech projects at ACM QU" },
-//       { src: "/assets/experiences/acm-2.jpg", caption: "Workshops and collaborative sprints" },
-//       { src: "/assets/experiences/acm-3.jpg", caption: "Internship program planning and mentorship" },
-//     ],
-//   },
 ]
 
 function ExperienceCard({ experience }) {
@@ -123,7 +83,7 @@ function ExperienceCard({ experience }) {
       transition={{ duration: 0.6 }}
       className="bg-gray-900/40 border border-gray-800 rounded-2xl p-6 md:p-8 backdrop-blur-sm hover:bg-gray-900/60 transition-all duration-75 group"
     >
-              <div className="flex items-start gap-4 md:gap-6">
+        <div className="flex items-start gap-4 md:gap-6">
           <motion.div 
             whileHover={{ scale: 1.1, rotate: 5 }}
             className="relative w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700 flex-shrink-0 group-hover:border-[#E48A57] transition-colors duration-300"
