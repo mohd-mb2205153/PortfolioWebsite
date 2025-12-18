@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "fix-react2shell-next": "^1.1.4",
     "framer-motion": "^12.15.0",
-    "next": "15.3.2",
+    "next": "^15.5.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
