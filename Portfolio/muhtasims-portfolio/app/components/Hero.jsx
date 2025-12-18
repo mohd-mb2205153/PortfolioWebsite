@@ -23,26 +23,30 @@ export default function Hero() {
 
   return (
     // Before pt was 50
-    <div className='pt-20 pb-2 sm:pt-24 sm:pb-6 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24 relative overflow-hidden bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)] min-h-screen flex items-center'>
-      
-      {/* Animated floating particles for mobile */}
-      <div className='absolute inset-0 overflow-hidden md:hidden'>
-        {[...Array(20)].map((_, i) => (
+    <div className='pt-16 pb-2 sm:pt-24 sm:pb-6 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24 relative overflow-hidden bg-[linear-gradient(to_bottom,#000,#2B1942_35%,#8F5C55_60%,#DBAF6E_80%)] min-h-[100svh] flex items-center'>
+
+      {/* Blinking stars */}
+      <div className='absolute inset-0 overflow-hidden pointer-events-none z-0'>
+        {[...Array(55)].map((_, i) => (
           <motion.div
-            key={i}
-            className='absolute w-1 h-1 bg-[#E48A57] rounded-full'
+            key={`star-${i}`}
+            className='absolute rounded-full bg-white'
             style={{
-              left: `${(i * 13) % 100}%`,
-              top: `${(i * 17) % 100}%`,
+              left: `${(i * 7.3) % 100}%`,
+              top: `${(i * 11.7) % 100}%`,
+              width: `${1 + (i % 3)}px`,
+              height: `${1 + (i % 3)}px`,
+              opacity: 0.6,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.6, 0.2],
+              opacity: [0.15, 0.95, 0.15],
+              scale: [0.8, 1.25, 0.8],
             }}
             transition={{
-              duration: 3 + (i % 3),
+              duration: 2.2 + (i % 4) * 0.5,
               repeat: Infinity,
-              delay: i * 0.2,
+              delay: (i % 7) * 0.25,
+              ease: 'easeInOut',
             }}
           />
         ))}
@@ -50,10 +54,10 @@ export default function Hero() {
 
       {/* Planet curve background */}
       <div className='absolute rounded-[50%] w-[2000px] sm:w-[2500px] md:w-[3000px] h-[800px] sm:h-[1000px] md:h-[1300px] bg-black top-[400px] sm:top-[500px] md:top-[650px] left-[50%] -translate-x-1/2
-        bg-[radial-gradient(closest-side,#000_80%,#2B1942)]'>
+        bg-[radial-gradient(closest-side,#000_80%,#2B1942)] pointer-events-none z-0'>
       </div>
       
-      <div className='relative px-4 sm:px-6 md:px-8 w-full'>
+      <div className='relative z-10 px-4 sm:px-6 md:px-8 w-full'>
         {/* Decorative gradient accents for mobile */}
         <div className='absolute -left-20 top-20 w-40 h-40 bg-[#E48A57]/20 rounded-full blur-3xl md:hidden'></div>
         <div className='absolute -right-20 top-40 w-32 h-32 bg-[#98B4CE]/20 rounded-full blur-3xl md:hidden'></div>
@@ -82,37 +86,38 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className='text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-[90%] sm:max-w-[500px] mx-auto mt-4 sm:mt-6 md:mt-8 text-white/90 leading-relaxed'
+          className='text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-[90%] sm:max-w-[500px] mx-auto mt-3 sm:mt-6 md:mt-8 text-white/90 leading-relaxed'
         > 
-          I am a Senior CS Student at Qatar University, focusing on AI, Deep Learning, Data Science, Web Development & Mobile Application
+          I am a Senior CS Student at Qatar University, focusing on Software Development, AI, Data Science, Mobile Application
         </motion.p>
 
-        {/* Profile picture not loading! */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        whileHover={{ scale: 1.05 }}
-        className='mt-6 sm:mt-8 md:mt-10 mb-4 sm:mb-6 md:mb-8 relative'
-      >
-        {/* Glowing ring effect for mobile */}
-        <div className='absolute inset-0 rounded-full bg-gradient-to-r from-[#E48A57] via-[#DBAF6E] to-[#98B4CE] blur-2xl opacity-40 animate-pulse md:hidden'></div>
-        <div className='relative'>
-          <Image 
-            src={profilePic}
-            alt='profile picture'
-            className='h-auto w-auto mx-auto max-w-[200px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-[400px] drop-shadow-[0_0_40px_rgba(228,138,87,0.4)]'
-          />
-        </div>
-      </motion.div>
+        <div className='-mt-6 sm:-mt-3 md:mt-0'>
+          {/* Profile picture not loading! */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            whileHover={{ scale: 1.05 }}
+            className='mt-2 sm:mt-8 md:mt-10 mb-2 sm:mb-6 md:mb-8 relative'
+          >
+            {/* Glowing ring effect for mobile */}
+            <div className='absolute inset-0 rounded-full bg-gradient-to-r from-[#E48A57] via-[#DBAF6E] to-[#98B4CE] blur-2xl opacity-40 animate-pulse md:hidden'></div>
+            <div className='relative'>
+              <Image 
+                src={profilePic}
+                alt='profile picture'
+                className='h-auto w-auto mx-auto max-w-[150px] sm:max-w-[220px] md:max-w-[300px] lg:max-w-[380px] drop-shadow-[0_0_40px_rgba(228,138,87,0.4)]'
+              />
+            </div>
+          </motion.div>
 
-              {/* Action buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className='mt-4 sm:mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto'
-        >
+          {/* Action buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className='mt-0 sm:mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md mx-auto'
+          >
           <motion.a
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -154,7 +159,8 @@ export default function Hero() {
             </svg>
             Visit GitHub
           </motion.a>
-        </motion.div>
+          </motion.div>
+        </div>
 
       </div>
 
