@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { DiJavascript } from "react-icons/di";
+import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
@@ -20,7 +20,7 @@ const skillCategories = [
     skills: [
       { id: 1, name: 'React', icon: <FaReact size={48} />, color: '#61DAF8', level: 83 },
       { id: 2, name: 'Next.js', icon: <SiNextdotjs size={48} />, color: '#FAFAFA', level: 85 },
-      { id: 3, name: 'JavaScript', icon: <DiJavascript size={48} />, color: '#F7DF1E', level: 95 },
+      { id: 3, name: 'TypeScript', icon: <SiTypescript size={48} />, color: '#3178C6', level: 95 },
       { id: 4, name: 'Tailwind CSS', icon: <RiTailwindCssFill size={48} />, color: '#38BDF8', level: 71 },
     ]
   },
